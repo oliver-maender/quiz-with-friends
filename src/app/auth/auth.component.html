@@ -1,0 +1,25 @@
+<div class="form-container">
+  <div class="form-headline">
+    <h2>{{ loginMode ? 'Log In' : 'Sign Up' }} to Quiz with Friends!</h2>
+  </div>
+  <div class="loading-container" *ngIf="loading">
+    <p>Loading...</p>
+  </div>
+  <div class="error-container bg-danger py-2 px-4" style="--bs-bg-opacity: 0.75;" *ngIf="error">
+    <p class="m-0">{{ error }}</p>
+  </div>
+  <form class="auth-form" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" ngNativeValidate *ngIf="!loading">
+    <div class="my-3">
+      <label for="emailInput" class="form-label">Email address</label>
+      <input type="email" name="email" id="emailInput" ngModel placeholder="E-Mail" class="form-control" required email>
+    </div>
+    <div class="mb-3">
+      <label for="InputPassword" class="form-label">Password</label>
+      <input type="password" name="password" id="InputPassword" ngModel placeholder="Password" class="form-control" minlength="8" required>
+    </div>
+    <div class="buttons-container">
+      <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">{{ loginMode ? 'Log In' : 'Sign Up' }}</button>
+      <button type="button" class="btn btn-secondary" (click)="onSwitchMode(); myForm.reset()">Switch to {{ loginMode ? 'Sign Up' : 'Log In' }}</button>
+    </div>
+  </form>
+</div>

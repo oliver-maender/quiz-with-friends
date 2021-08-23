@@ -1,0 +1,5 @@
+.startpage-container {
+  height: 50vh;
+  background: rgb(0,0,35);
+  background-image: linear-gradient(#84CEEB 0%, #5AB9EA 35%, #C1C8E4 100%);
+}

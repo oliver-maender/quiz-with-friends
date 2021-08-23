@@ -1,0 +1,9 @@
+<div class="header-container m-3">
+  <div class="title">
+    <h2><a class="home-link" [routerLink]="'/'">Quiz with Friends</a></h2>
+  </div>
+  <div class="buttons">
+    <button type="button" class="btn" [class.btn-secondary]="authenticated" [class.btn-success]="!authenticated"
+      (click)="onAuthButton()">{{ authenticated ? 'Log Out' : 'Log In' }}</button>
+  </div>
+</div>
