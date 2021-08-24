@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { of, throwError } from 'rxjs';
+import { catchError, take } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 
 @Component({
@@ -32,11 +34,11 @@ export class AuthComponent implements OnInit {
           this.loading = false;
         });
       } else {
-        this.authService.signup(myForm.value.email, myForm.value.password).then((resData) => {
-          console.log(resData);
-          this.loading = false;
-        }).catch((errorMessage) => {
+        this.authService.error.pipe(take(1)).subscribe((errorMessage) => {
           this.error = errorMessage;
+        });
+        this.authService.signup(myForm.value.username, myForm.value.email, myForm.value.password).pipe(take(1)).subscribe((resData) => {
+          console.log(resData);
           this.loading = false;
         });
       }

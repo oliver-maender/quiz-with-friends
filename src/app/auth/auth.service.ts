@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 
 import { User } from '../shared/user.model';
 
@@ -14,11 +15,13 @@ export class AuthService {
   user = new BehaviorSubject<User>(null);
   private tokenExpirationTimer: any;
 
-  constructor(private auth: AngularFireAuth, private router: Router) { }
+  error = new Subject<string>();
+
+  constructor(private auth: AngularFireAuth, private router: Router, private firestore: AngularFirestore) { }
 
   login(email: string, password: string) {
     return this.auth.signInWithEmailAndPassword(email, password).then((resData) => {
-      this.handleAuthentication(resData.user.email, resData.user.uid);
+      this.handleAuthentication(resData.user.displayName, resData.user.email, resData.user.uid);
       return resData;
     }).catch((error) => {
       let errorMessage = 'An unknown error occured.';
@@ -31,17 +34,33 @@ export class AuthService {
     });
   }
 
-  signup(email: string, password: string) {
-    return this.auth.createUserWithEmailAndPassword(email, password).then((resData) => {
-      this.handleAuthentication(resData.user.email, resData.user.uid);
-      return resData;
-    }).catch((error) => {
-      let errorMessage = 'An unknown error occured.';
-      if (error.code === 'auth/email-already-in-use') {
-        errorMessage = 'This email already exists.';
+  signup(username: string, email: string, password: string) {
+    return this.firestore.collection('users').doc('userlist').get().pipe(take(1), map((userlist: any) => {
+      const users = userlist.data();
+      for (const user in users) {
+        if (Object.prototype.hasOwnProperty.call(users, user)) {
+          const element = users[user];
+          if (element === username) {
+            this.error.next('Username already taken.');
+            return false;
+          }
+        }
       }
-      throw errorMessage;
-    });
+      return this.auth.createUserWithEmailAndPassword(email, password).then(async (resData) => {
+        const user = await this.auth.currentUser;
+        this.handleAuthentication(username, resData.user.email, resData.user.uid);
+        user.updateProfile({ displayName: username });
+        this.firestore.collection('users').doc('userlist').update({ [resData.user.uid]: username });
+        this.firestore.collection('users').doc(user.uid).set({ duels: [] });
+        return resData;
+      }).catch((error) => {
+        let errorMessage = 'An unknown error occured.';
+        if (error.code === 'auth/email-already-in-use') {
+          errorMessage = 'This email already exists.';
+        }
+        this.error.next(errorMessage);
+      });
+    }));
   }
 
   logout() {
@@ -76,11 +95,11 @@ export class AuthService {
     }, expirationDuration);
   }
 
-  async handleAuthentication(email: string, uid: string) {
+  async handleAuthentication(username: string, email: string, uid: string) {
     const userToken = (await (await this.auth.currentUser)?.getIdToken(true)).toString();
     console.log(userToken);
     const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
-    const userData = new User(email, uid, userToken, expirationDate);
+    const userData = new User(username, email, uid, userToken, expirationDate);
     console.log(userData);
     localStorage.setItem('userData', JSON.stringify(userData));
     this.autoLogout(3600 * 1000);

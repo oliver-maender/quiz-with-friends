@@ -1,15 +1,19 @@
 <div class="form-container">
-  <div class="form-headline">
+  <div class="form-headline mb-3">
     <h2>{{ loginMode ? 'Log In' : 'Sign Up' }} to Quiz with Friends!</h2>
   </div>
   <div class="loading-container" *ngIf="loading">
     <p>Loading...</p>
   </div>
-  <div class="error-container bg-danger py-2 px-4" style="--bs-bg-opacity: 0.75;" *ngIf="error">
+  <div class="error-container bg-danger py-2 px-4 mb-3" style="--bs-bg-opacity: 0.75;" *ngIf="error">
     <p class="m-0">{{ error }}</p>
   </div>
   <form class="auth-form" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" ngNativeValidate *ngIf="!loading">
-    <div class="my-3">
+    <div class="mb-3" *ngIf="!loginMode">
+      <label for="usernameInput" class="form-label">Username</label>
+      <input type="text" name="username" id="usernameInput" ngModel placeholder="Username" class="form-control" required>
+    </div>
+    <div class="mb-3">
       <label for="emailInput" class="form-label">Email address</label>
       <input type="email" name="email" id="emailInput" ngModel placeholder="E-Mail" class="form-control" required email>
     </div>

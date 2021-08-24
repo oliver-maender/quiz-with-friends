@@ -1,9 +1,9 @@
 {
   "targets": {
-    "quiz-with-friends-d2c77": {
+    "quiz-with-friends-5874c": {
       "hosting": {
         "quiz-with-friends": [
-          "quiz-with-friends-d2c77"
+          "quiz-with-friends-5874c"
         ]
       }
     }
