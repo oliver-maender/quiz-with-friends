@@ -1,9 +1,19 @@
 <div class="header-container m-3">
-  <div class="title">
-    <h2><a class="home-link" [routerLink]="'/'">Quiz with Friends</a></h2>
+  <div class="main-container">
+    <div class="title">
+      <h2><a class="home-link" [routerLink]="'/get-started'">Quiz with Friends</a></h2>
+    </div>
   </div>
-  <div class="buttons">
-    <button type="button" class="btn" [class.btn-secondary]="authenticated" [class.btn-success]="!authenticated"
-      (click)="onAuthButton()">{{ authenticated ? 'Log Out' : 'Log In' }}</button>
+  <div class="header-buttons">
+    <div class="user-info me-3" *ngIf="authenticated">
+      <span>Username: {{ username }}</span>
+    </div>
+    <div class="main-buttons me-3">
+      <button type="button" class="btn btn-primary" [routerLink]="'/'" *ngIf="authenticated">My Duels</button>
+    </div>
+    <div>
+      <button type="button" class="btn" [class.btn-secondary]="authenticated" [class.btn-success]="!authenticated"
+        (click)="onAuthButton()">{{ authenticated ? 'Log Out' : 'Log In / Sign Up' }}</button>
+    </div>
   </div>
 </div>

@@ -19,6 +19,13 @@ export class AuthService {
 
   constructor(private auth: AngularFireAuth, private router: Router, private firestore: AngularFirestore) { }
 
+  /**
+   * Sending a login request to the firebase authentication.
+   *
+   * @param email - The submitted email address
+   * @param password - The submitted password
+   * @returns If it was successful or not
+   */
   login(email: string, password: string) {
     return this.auth.signInWithEmailAndPassword(email, password).then((resData) => {
       this.handleAuthentication(resData.user.displayName, resData.user.email, resData.user.uid);
@@ -34,6 +41,14 @@ export class AuthService {
     });
   }
 
+  /**
+   * Sending a signup request to the firebase authentication.
+   *
+   * @param username - The submitted username
+   * @param email - The submitted email address
+   * @param password - The submitted password
+   * @returns If it was successful or not
+   */
   signup(username: string, email: string, password: string) {
     return this.firestore.collection('users').doc('userlist').get().pipe(take(1), map((userlist: any) => {
       const users = userlist.data();
@@ -63,6 +78,9 @@ export class AuthService {
     }));
   }
 
+  /**
+   * Logs the user out by removing his data from the local storage.
+   */
   logout() {
     this.user.next(null);
     this.router.navigate(['/get-started']);
@@ -73,6 +91,9 @@ export class AuthService {
     this.tokenExpirationTimer = null;
   }
 
+  /**
+   * Automatically logs the user in when the page gets reloaded using the data in the local storage.
+   */
   autoLogin() {
     this.auth.authState.pipe(take(1)).subscribe(async (user) => {
       const userData = JSON.parse(localStorage.getItem('userData'));
@@ -89,12 +110,24 @@ export class AuthService {
     });
   }
 
+  /**
+   * Automatically logs out the user after a specified amount of time.
+   *
+   * @param expirationDuration - The milliseconds from now on when the user should get logged out automatically
+   */
   autoLogout(expirationDuration: number) {
     this.tokenExpirationTimer = setTimeout(() => {
       this.logout();
     }, expirationDuration);
   }
 
+  /**
+   * Handles the rest of the authentication when firebase has responded.
+   *
+   * @param username - The submitted username
+   * @param email - The submitted email adress
+   * @param uid - The user's ID
+   */
   async handleAuthentication(username: string, email: string, uid: string) {
     const userToken = (await (await this.auth.currentUser)?.getIdToken(true)).toString();
     console.log(userToken);

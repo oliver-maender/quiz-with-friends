@@ -1,18 +1,36 @@
-<div class="user-startpage-container m-5">
-  <div class="main-container">
-    <div class="profile-link-container">
-      <p>You: {{ username }}</p>
+<div class="user-startpage-container own-background-gradient p-5">
+  <div class="pre-main-container mb-5">
+    <div class="info-message-container bg-danger text-white" *ngIf="showInfoMessage">
+      <span>{{ infoMessage }}</span>
     </div>
-    <div class="duels-overview">
-      <h2>Duels</h2>
-      <div class="player-duel">
-        <button class="btn btn-success m-2" *ngFor="let duel of allDuels" (click)="playDuel(duel.duelId)">{{ duel.playerTwo }}</button>
-      </div>
+    <div class="new-opponents">
+      <button class="btn btn-primary m-2" (click)="showAllUsers()">New Duel</button>
+      <app-modal-new-duel [allUsers]="allUsers" (closeModalEvent)="dismissModal()"
+        (newOpponent)="startNewDuel($event.uid, $event.opponentUsername)" *ngIf="showAllUsersList"></app-modal-new-duel>
     </div>
   </div>
-  <div class="new-opponents">
-    <h2>New duel</h2>
-    <button class="btn btn-secondary m-2" (click)="showAllUsers()">All Users</button>
-    <button class="btn btn-primary m-2" type="button" *ngFor="let user of allUsers" (click)="startNewDuel(user.uid, user.username)">{{ user.username }}</button>
+  <div class="main-container">
+    <div class="duels-overview m-3">
+      <h2 class="mb-3">Duels</h2>
+      <div class="all-duels">
+        <h5 class="text-center">Active duels</h5>
+        <div class="player-duels" *ngIf="duelsReceived">
+          <div class="player-duel-info-container p-3 m-3" *ngFor="let duel of allActiveDuels">
+            <p>{{ duel.opponent }}</p>
+            <button class="btn btn-primary mt-2" [routerLink]="['duel', duel.duelId]">Play</button>
+          </div>
+        </div>
+        <div class="player-duels-loading text-center" *ngIf="!duelsReceived">
+          <p>Loading...</p>
+        </div>
+        <h5 class="text-center mt-3">Finished duels</h5>
+        <div class="player-duels" *ngIf="duelsReceived">
+          <div class="player-duel-info-container p-3 m-3" *ngFor="let duel of allFinishedDuels">
+            <p>{{ duel.opponent }}</p>
+            <button class="btn btn-primary mt-2" [routerLink]="['duel', duel.duelId]">Recap</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

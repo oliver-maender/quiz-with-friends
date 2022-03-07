@@ -14,6 +14,11 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { StartpageComponent } from './startpage/startpage.component';
 import { UserStartpageComponent } from './user-startpage/user-startpage.component';
+import { DuelOverviewComponent } from './duel-overview/duel-overview.component';
+import { DuelPlayComponent } from './duel-play/duel-play.component';
+import { QuestionComponent } from './duel-play/question/question.component';
+import { AnswersComponent } from './duel-play/answers/answers.component';
+import { ModalNewDuelComponent } from './modal-new-duel/modal-new-duel.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { UserStartpageComponent } from './user-startpage/user-startpage.componen
     HeaderComponent,
     FooterComponent,
     StartpageComponent,
-    UserStartpageComponent
+    UserStartpageComponent,
+    DuelOverviewComponent,
+    DuelPlayComponent,
+    QuestionComponent,
+    AnswersComponent,
+    ModalNewDuelComponent
   ],
   imports: [
     BrowserModule,

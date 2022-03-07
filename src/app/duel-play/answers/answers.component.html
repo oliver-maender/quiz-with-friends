@@ -1,0 +1,5 @@
+<div class="answers-container">
+  <div *ngFor="let answer of answers; let i = index;" [ngClass]="[answered && rightAnswer === i ? 'right-answer' : '', answered && rightAnswer !== i ? 'wrong-answer' : '']" (click)="checkAnswer(i)" class="answer-container">
+      <span>{{ answer }}</span>
+  </div>
+</div>

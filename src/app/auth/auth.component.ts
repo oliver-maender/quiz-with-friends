@@ -21,6 +21,11 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Checking the submitted user data and trying to login or signup the user.
+   *
+   * @param {NgForm} myForm - The form containing the login data submitted by the user
+   */
   onSubmit(myForm: NgForm) {
     if (myForm.valid) {
       this.loading = true;
@@ -46,6 +51,9 @@ export class AuthComponent implements OnInit {
     myForm.reset();
   }
 
+  /**
+   * Switches between login and signup mode.
+   */
   onSwitchMode() {
     this.loginMode = !this.loginMode;
     this.error = '';

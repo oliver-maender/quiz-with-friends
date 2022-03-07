@@ -1,5 +1,24 @@
 .startpage-container {
+  position: relative;
   height: 50vh;
-  background: rgb(0,0,35);
-  background-image: linear-gradient(#84CEEB 0%, #5AB9EA 35%, #C1C8E4 100%);
+}
+
+.question-example {
+  position: absolute;
+  right: 80px;
+  bottom: 80px;
+  width: 640px;
+  transform: rotate(350deg);
+}
+
+@media (max-width: 1050px) {
+  .question-example {
+    width: 480px;
+  }
+}
+
+@media (max-width: 800px) {
+  .question-example {
+    width: 320px;
+  }
 }

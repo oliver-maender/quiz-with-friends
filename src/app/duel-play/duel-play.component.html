@@ -1,0 +1,8 @@
+<app-question [question]="question"></app-question>
+<app-answers (answeredEvent)="onAnswered($event)" [answers]="answers" [rightAnswer]="rightAnswer" [answered]="timeUp"></app-answers>
+<div class="progress">
+    <div class="progress-bar" [ngStyle]="{'width': divStyle}"></div>
+</div>
+<div class="buttons m-3">
+  <button type="button" class="btn btn-secondary" [disabled]="!timeUp" (click)="nextQuestion()">{{ questionsInRound < 3 ? 'Next' : 'End' }}</button>
+</div>

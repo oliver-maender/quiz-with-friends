@@ -11,21 +11,30 @@ import { AuthService } from '../auth/auth.service';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   authenticated = false;
+  username = '';
 
   authSubscription: Subscription;
 
   constructor(private authService: AuthService, private router: Router) { }
 
+  /**
+   * Checks for a logged in user and saves his username.
+   */
   ngOnInit(): void {
     this.authSubscription = this.authService.user.subscribe((user) => {
       if (user) {
         this.authenticated = true;
+        this.username = user.username;
       } else {
         this.authenticated = false;
+        this.username = '';
       }
     });
   }
 
+  /**
+   * Controls the login/signup/logout button.
+   */
   onAuthButton() {
     if (this.authenticated) {
       this.authService.logout();
@@ -34,6 +43,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * Unsubscribes to the authentication subscription.
+   */
   ngOnDestroy(): void {
     this.authSubscription.unsubscribe();
   }

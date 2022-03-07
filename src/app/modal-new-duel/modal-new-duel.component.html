@@ -1,0 +1,16 @@
+<div class="own-modal-background">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Start a new duel</h5>
+      </div>
+      <div class="modal-body">
+        <button class="btn btn-primary m-2" type="button" *ngFor="let user of allUsers"
+          (click)="startNewDuel(user.uid, user.username)">{{ user.username }}</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
