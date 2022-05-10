@@ -19,6 +19,8 @@ import { DuelPlayComponent } from './duel-play/duel-play.component';
 import { QuestionComponent } from './duel-play/question/question.component';
 import { AnswersComponent } from './duel-play/answers/answers.component';
 import { ModalNewDuelComponent } from './modal-new-duel/modal-new-duel.component';
+import { DataPrivacyComponent } from './data-privacy/data-privacy.component';
+import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ModalNewDuelComponent } from './modal-new-duel/modal-new-duel.component
     DuelPlayComponent,
     QuestionComponent,
     AnswersComponent,
-    ModalNewDuelComponent
+    ModalNewDuelComponent,
+    DataPrivacyComponent,
+    LegalNoticeComponent
   ],
   imports: [
     BrowserModule,

@@ -2,10 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(0, 120, 230);
+  background-color: white;
   /* background-image: linear-gradient(to bottom right, rgb(200, 200, 255), rgb(70, 70, 255)); */
   padding: 32px;
-  margin: 16px;
+  margin: 8px;
   border-radius: 8px;
   text-align: center;
 }

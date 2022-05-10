@@ -1,8 +1,17 @@
-<app-question [question]="question"></app-question>
-<app-answers (answeredEvent)="onAnswered($event)" [answers]="answers" [rightAnswer]="rightAnswer" [answered]="timeUp"></app-answers>
-<div class="progress">
-    <div class="progress-bar" [ngStyle]="{'width': divStyle}"></div>
-</div>
-<div class="buttons m-3">
-  <button type="button" class="btn btn-secondary" [disabled]="!timeUp" (click)="nextQuestion()">{{ questionsInRound < 3 ? 'Next' : 'End' }}</button>
+<div class="duel-play-background-container own-background-gradient">
+  <div class="duel-play-container">
+    <app-question [question]="question"></app-question>
+    <app-answers (answeredEvent)="onAnswered($event)" [answers]="answers" [rightAnswer]="rightAnswer"
+      [answered]="timeUp">
+    </app-answers>
+    <div class="progress-container">
+      <div class="progress">
+        <div class="progress-bar" [ngStyle]="{'width': divStyle}"></div>
+      </div>
+    </div>
+    <div class="buttons m-3">
+      <button type="button" class="btn btn-secondary" [disabled]="!timeUp" (click)="nextQuestion()">{{ questionsInRound
+        < 3 ? 'Next' : 'End' }}</button>
+    </div>
+  </div>
 </div>

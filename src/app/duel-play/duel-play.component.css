@@ -1,3 +1,22 @@
+.duel-play-background-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.duel-play-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.progress-container {
+  margin: 8px;
+}
+
 .buttons {
   display: flex;
   justify-content: flex-end;

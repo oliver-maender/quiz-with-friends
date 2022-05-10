@@ -1,0 +1,1320 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>quiz-with-friends documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">quiz-with-friends documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >DataService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/shared/data.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getDuel" >getDuel</a>
+                            </li>
+                            <li>
+                                <a href="#getQuestion" >getQuestion</a>
+                            </li>
+                            <li>
+                                <a href="#listenToDuels" >listenToDuels</a>
+                            </li>
+                            <li>
+                                <a href="#setDuelFinishOnUsers" >setDuelFinishOnUsers</a>
+                            </li>
+                            <li>
+                                <a href="#setDuelForPlayerOne" >setDuelForPlayerOne</a>
+                            </li>
+                            <li>
+                                <a href="#setDuelForPlayerTwo" >setDuelForPlayerTwo</a>
+                            </li>
+                            <li>
+                                <a href="#setDuelScores" >setDuelScores</a>
+                            </li>
+                            <li>
+                                <a href="#showAllUsers" >showAllUsers</a>
+                            </li>
+                            <li>
+                                <a href="#startNewDuel" >startNewDuel</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(firestore: AngularFirestore)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/shared/data.service.ts:10</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>firestore</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFirestore</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDuel"></a>
+                    <span class="name">
+                        <span ><b>getDuel</b></span>
+                        <a href="#getDuel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDuel(duelId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/shared/data.service.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Listens to the duel data to show changes immediately.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>duelId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The id of the duel</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The duel data</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getQuestion"></a>
+                    <span class="name">
+                        <span ><b>getQuestion</b></span>
+                        <a href="#getQuestion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getQuestion()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/shared/data.service.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns the specified question.</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The data of the question</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listenToDuels"></a>
+                    <span class="name">
+                        <span ><b>listenToDuels</b></span>
+                        <a href="#listenToDuels"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>listenToDuels(userid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="198"
+                            class="link-to-prism">src/app/shared/data.service.ts:198</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Listen to the duels to display the changes immediately.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>userid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The user&#39;s id</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The user&#39;s data</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setDuelFinishOnUsers"></a>
+                    <span class="name">
+                        <span ><b>setDuelFinishOnUsers</b></span>
+                        <a href="#setDuelFinishOnUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setDuelFinishOnUsers(playerOneUId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, playerTwoUId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="183"
+                            class="link-to-prism">src/app/shared/data.service.ts:183</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Removes the opponent from active opponents.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>playerOneUId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Player one&#39;s uid</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>playerTwoUId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Player two&#39;s uid</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setDuelForPlayerOne"></a>
+                    <span class="name">
+                        <span ><b>setDuelForPlayerOne</b></span>
+                        <a href="#setDuelForPlayerOne"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setDuelForPlayerOne(duelData: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, round: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, score: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, duelId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="117"
+                            class="link-to-prism">src/app/shared/data.service.ts:117</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Changes the duel data in the firestore for player 1</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>duelData</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The data of the duel</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>round</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The round which was just played</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>score</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The score the user got this round</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>duelId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The id of the duel</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setDuelForPlayerTwo"></a>
+                    <span class="name">
+                        <span ><b>setDuelForPlayerTwo</b></span>
+                        <a href="#setDuelForPlayerTwo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setDuelForPlayerTwo(duelData: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, round: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, score: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, duelId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="151"
+                            class="link-to-prism">src/app/shared/data.service.ts:151</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Changes the duel data in the firestore for player 2</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>duelData</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The data of the duel</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>round</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The round which was just played</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>score</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The score the user got this round</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>duelId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The id of the duel</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setDuelScores"></a>
+                    <span class="name">
+                        <span ><b>setDuelScores</b></span>
+                        <a href="#setDuelScores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setDuelScores(duelId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, player: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, round: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, score: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/app/shared/data.service.ts:91</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Changes the duel score in the firestore</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>duelId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The id of the duel</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>player</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The player who just played (1 or 2)</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>round</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The round which was just played</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>score</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The score the user got this round</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>true</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showAllUsers"></a>
+                    <span class="name">
+                        <span ><b>showAllUsers</b></span>
+                        <a href="#showAllUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showAllUsers()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/shared/data.service.ts:19</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the data for all the users.</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>All user data</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startNewDuel"></a>
+                    <span class="name">
+                        <span ><b>startNewDuel</b></span>
+                        <a href="#startNewDuel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startNewDuel(username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, userid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, opponentUsername: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, uid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/shared/data.service.ts:33</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates a new duel between those two users.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>username</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The user&#39;s username</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>userid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The user&#39;s user ID</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>opponentUsername</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The opponent&#39;s username</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>uid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The opponent&#39;s user ID</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { AngularFirestore } from &#x27;@angular/fire/firestore&#x27;;
+import { map, take } from &#x27;rxjs/operators&#x27;;
+
+import firebase from &#x27;firebase/app&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class DataService {
+
+  constructor(private firestore: AngularFirestore) { }
+
+  /**
+   * Gets the data for all the users.
+   *
+   * @returns All user data
+   */
+  showAllUsers() {
+    return this.firestore.collection(&#x27;users&#x27;).doc(&#x27;userlist&#x27;).get().pipe(take(1), map((res) &#x3D;&gt; {
+      return res.data();
+    }));
+  }
+
+  /**
+   * Creates a new duel between those two users.
+   *
+   * @param username - The user&#x27;s username
+   * @param userid - The user&#x27;s user ID
+   * @param opponentUsername - The opponent&#x27;s username
+   * @param uid - The opponent&#x27;s user ID
+   */
+  startNewDuel(username: string, userid: string, opponentUsername: string, uid: string) {
+    let newDuelId &#x3D; &#x27;&#x27;;
+    this.firestore.collection(&#x27;duels&#x27;).add({ access: [userid, uid] }).then((docRes) &#x3D;&gt; {
+      newDuelId &#x3D; docRes.id;
+      // this.firestore.collection(&#x27;users&#x27;).doc(userid).get().pipe(take(1)).subscribe((res) &#x3D;&gt; {
+      //   let duels: any &#x3D; res.data();
+      //   duels.duels.push(newDuelId);
+      //   console.log(duels);
+      //   this.firestore.collection(&#x27;users&#x27;).doc(userid).update(duels);
+      // });
+      this.firestore.collection(&#x27;users&#x27;).doc(userid).update({
+        duels: firebase.firestore.FieldValue.arrayUnion({ duelId: newDuelId, opponent: opponentUsername, finished: false })
+      });
+      this.firestore.collection(&#x27;users&#x27;).doc(uid).update({
+        duels: firebase.firestore.FieldValue.arrayUnion({ duelId: newDuelId, opponent: username, finished: false })
+      });
+      this.firestore.collection(&#x27;users&#x27;).doc(userid).update({
+        activeOpponents: firebase.firestore.FieldValue.arrayUnion(uid)
+      });
+      this.firestore.collection(&#x27;users&#x27;).doc(uid).update({
+        activeOpponents: firebase.firestore.FieldValue.arrayUnion(userid)
+      });
+      this.firestore.collection(&#x27;duels&#x27;).doc(newDuelId).update({ playerOne: username, playerTwo: opponentUsername, finished: false, playerOneScore: 0, playerTwoScore: 0, playerOneRoundsPlayed: 0, playerOneRoundScoring: [0, 0, 0, 0, 0, 0], playerTwoRoundsPlayed: 0, playerTwoRoundScoring: [0, 0, 0, 0, 0, 0], playerOnTheClock: 1, winners: [&#x27;&#x27;] });
+    });
+  }
+
+  /**
+   * Listens to the duel data to show changes immediately.
+   *
+   * @param duelId - The id of the duel
+   * @returns The duel data
+   */
+  getDuel(duelId: string) {
+    return this.firestore.collection(&#x27;duels&#x27;).doc(duelId).valueChanges().pipe(map((duel: any) &#x3D;&gt; {
+      return duel;
+    }));
+  }
+
+  /**
+   * Returns the specified question.
+   *
+   * @returns The data of the question
+   */
+  getQuestion() {
+    return this.firestore.collection(&#x27;questionAnswer&#x27;).valueChanges().pipe(take(1), map((resData) &#x3D;&gt; {
+      return resData;
+    }));
+  }
+
+  /**
+   * Changes the duel score in the firestore
+   *
+   * @param duelId - The id of the duel
+   * @param player - The player who just played (1 or 2)
+   * @param round - The round which was just played
+   * @param score - The score the user got this round
+   * @returns true
+   */
+  setDuelScores(duelId: string, player: number, round: number, score: number) {
+    return this.firestore.collection(&#x27;duels&#x27;).doc(duelId).get().pipe(take(1), map((duel: any) &#x3D;&gt; {
+      let duelData &#x3D; duel.data();
+      if (duelData.playerOnTheClock &#x3D;&#x3D;&#x3D; 1) {
+        duelData.playerOnTheClock &#x3D; 2;
+      } else {
+        duelData.playerOnTheClock &#x3D; 1;
+      }
+      if (player &#x3D;&#x3D;&#x3D; 1) {
+        this.setDuelForPlayerOne(duelData, round, score, duelId);
+      } else {
+        this.setDuelForPlayerTwo(duelData, round, score, duelId);
+      }
+      console.log(duelData.playerOneRoundScoring);
+      return true;
+    }));
+  }
+
+  /**
+   * Changes the duel data in the firestore for player 1
+   *
+   * @param duelData - The data of the duel
+   * @param round - The round which was just played
+   * @param score - The score the user got this round
+   * @param duelId - The id of the duel
+   */
+  setDuelForPlayerOne(duelData: any, round: number, score: number, duelId: string) {
+    duelData.playerOneRoundScoring[round] &#x3D; score;
+    duelData.playerOneRoundsPlayed++;
+    duelData.playerOneScore +&#x3D; score;
+    if (duelData.playerOneRoundsPlayed &#x3D;&#x3D;&#x3D; 6 &amp;&amp; duelData.playerTwoRoundsPlayed &#x3D;&#x3D;&#x3D; 6) {
+      duelData.finished &#x3D; true;
+      duelData.playerOnTheClock &#x3D; 0;
+      this.setDuelFinishOnUsers(duelData.access[0], duelData.access[1]);
+      if (duelData.playerOneScore &gt; duelData.playerTwoScore) {
+        duelData.winners &#x3D; [duelData.playerOne];
+      } else if (duelData.playerOneScore &lt; duelData.playerTwoScore) {
+        duelData.winners &#x3D; [duelData.playerTwo];
+      } else {
+        duelData.winners &#x3D; [duelData.playerOne, duelData.playerTwo];
+      }
+    }
+    this.firestore.collection(&#x27;duels&#x27;).doc(duelId).update({
+      playerOneRoundsPlayed: duelData.playerOneRoundsPlayed,
+      playerOneRoundScoring: duelData.playerOneRoundScoring,
+      playerOneScore: duelData.playerOneScore,
+      playerOnTheClock: duelData.playerOnTheClock,
+      finished: duelData.finished,
+      winners: duelData.winners
+    });
+  }
+
+  /**
+   * Changes the duel data in the firestore for player 2
+   *
+   * @param duelData - The data of the duel
+   * @param round - The round which was just played
+   * @param score - The score the user got this round
+   * @param duelId - The id of the duel
+   */
+  setDuelForPlayerTwo(duelData: any, round: number, score: number, duelId: string) {
+    duelData.playerTwoRoundScoring[round] &#x3D; score;
+    duelData.playerTwoRoundsPlayed++;
+    duelData.playerTwoScore +&#x3D; score;
+    if (duelData.playerOneRoundsPlayed &#x3D;&#x3D;&#x3D; 6 &amp;&amp; duelData.playerTwoRoundsPlayed &#x3D;&#x3D;&#x3D; 6) {
+      duelData.finished &#x3D; true;
+      duelData.playerOnTheClock &#x3D; 0;
+      this.setDuelFinishOnUsers(duelData.access[0], duelData.access[1]);
+      if (duelData.playerOneScore &gt; duelData.playerTwoScore) {
+        duelData.winners &#x3D; [duelData.playerOne];
+      } else if (duelData.playerOneScore &lt; duelData.playerTwoScore) {
+        duelData.winners &#x3D; [duelData.playerTwo];
+      } else {
+        duelData.winners &#x3D; [duelData.playerOne, duelData.playerTwo];
+      }
+    }
+    this.firestore.collection(&#x27;duels&#x27;).doc(duelId).update({
+      playerTwoRoundsPlayed: duelData.playerTwoRoundsPlayed,
+      playerTwoRoundScoring: duelData.playerTwoRoundScoring,
+      playerTwoScore: duelData.playerTwoScore,
+      playerOnTheClock: duelData.playerOnTheClock,
+      finished: duelData.finished,
+      winners: duelData.winners
+    });
+  }
+
+  /**
+   * Removes the opponent from active opponents.
+   *
+   * @param playerOneUId - Player one&#x27;s uid
+   * @param playerTwoUId - Player two&#x27;s uid
+   */
+  setDuelFinishOnUsers(playerOneUId: string, playerTwoUId: string) {
+    this.firestore.collection(&#x27;users&#x27;).doc(playerOneUId).update({
+      activeOpponents: firebase.firestore.FieldValue.arrayRemove(playerTwoUId)
+    });
+    this.firestore.collection(&#x27;users&#x27;).doc(playerTwoUId).update({
+      activeOpponents: firebase.firestore.FieldValue.arrayRemove(playerOneUId)
+    });
+  }
+
+  /**
+   * Listen to the duels to display the changes immediately.
+   *
+   * @param userid - The user&#x27;s id
+   * @returns The user&#x27;s data
+   */
+  listenToDuels(userid: string) {
+    return this.firestore.collection(&#x27;users&#x27;).doc(userid).valueChanges().pipe(map((userData) &#x3D;&gt; {
+      return userData;
+    }))
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'DataService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

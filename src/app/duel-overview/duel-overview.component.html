@@ -1,37 +1,39 @@
 <div class="duel-overview-container own-background-gradient p-3">
-  <div class="back-button-container ms-5">
-    <button type="button" class="btn btn-secondary" [routerLink]="'/'">Back</button>
-  </div>
   <div class="duel-overview-loading-main-container" *ngIf="!isDuelInfoSet">
     <span>Loading...</span>
   </div>
-  <div class="d-flex justify-content-center w-100">
+  <div>
     <div class="duel-overview-main-container" *ngIf="isDuelInfoSet">
-      <div class="duel-scoring-container mb-3">
-        <span class="mx-1">{{ username }}</span>
-        <span class="mx-1">{{ userScoring }}</span>
-        <span class="mx-1">-</span>
-        <span class="mx-1">{{ opponentScoring }}</span>
-        <span class="mx-1">{{ opponent }}</span>
+      <div class="back-button-container me-3">
+        <button type="button" class="btn btn-secondary" [routerLink]="'/'">Back</button>
       </div>
-      <div class="winner-msg-container mb-3 bg-success p-3 text-white" *ngIf="playerWinners[0].length > 0">
-        <span *ngIf="playerWinners.length <= 1">The winner is {{ playerWinners[0] }}!</span>
-        <!-- <span *ngIf="playerWinners.length > 1">It's a tie between {{ playerWinners[0] }} and {{ playerWinners[1] }}!</span> -->
-        <span *ngIf="playerWinners.length > 1">It's a tie!</span>
-      </div>
-      <div class="duel-round-container" *ngFor="let round of userRoundsScoring; let i = index">
-        <span class="mx-1">{{ userRoundsScoring[i] }}</span>
-        <span class="mx-1">- Round {{ i+1 }} -</span>
-        <span class="mx-1">{{ opponentRoundsScoring[i] }}</span>
-      </div>
-      <div class="buttons-container mt-3">
-        <div class="wait-for-opponent-container mb-3 bg-danger p-3 text-white"
-          *ngIf="!isPlayerOnTheClock && playerWinners[0].length < 1">
-          <span>Your opponent has to play!</span>
+      <div class="duel-scoring-main-container">
+        <div class="duel-scoring-container mb-3">
+          <span class="mx-1">{{ username }}</span>
+          <span class="mx-1">{{ userScoring }}</span>
+          <span class="mx-1">-</span>
+          <span class="mx-1">{{ opponentScoring }}</span>
+          <span class="mx-1">{{ opponent }}</span>
         </div>
-        <button type="button" class="btn" [class.btn-success]="isPlayerOnTheClock"
-          [class.btn-secondary]="!isPlayerOnTheClock" (click)="playRound()"
-          [disabled]="!isPlayerOnTheClock">Play</button>
+        <div class="winner-msg-container mb-3 bg-success p-3 text-white" *ngIf="playerWinners[0].length > 0">
+          <span *ngIf="playerWinners.length <= 1">The winner is {{ playerWinners[0] }}!</span>
+          <!-- <span *ngIf="playerWinners.length > 1">It's a tie between {{ playerWinners[0] }} and {{ playerWinners[1] }}!</span> -->
+          <span *ngIf="playerWinners.length > 1">It's a tie!</span>
+        </div>
+        <div class="duel-round-container" *ngFor="let round of userRoundsScoring; let i = index">
+          <span class="mx-1">{{ userRoundsScoring[i] }}</span>
+          <span class="mx-1">- Round {{ i+1 }} -</span>
+          <span class="mx-1">{{ opponentRoundsScoring[i] }}</span>
+        </div>
+        <div class="buttons-container mt-3">
+          <div class="wait-for-opponent-container mb-3 bg-danger p-3 text-white"
+            *ngIf="!isPlayerOnTheClock && playerWinners[0].length < 1">
+            <span>Your opponent has to play!</span>
+          </div>
+          <button type="button" class="btn" [class.btn-success]="isPlayerOnTheClock"
+            [class.btn-secondary]="!isPlayerOnTheClock" (click)="playRound()"
+            [disabled]="!isPlayerOnTheClock">Play</button>
+        </div>
       </div>
     </div>
   </div>

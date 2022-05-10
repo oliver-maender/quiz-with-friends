@@ -1,6 +1,11 @@
-<div class="form-container">
+<div class="form-container mx-3">
   <div class="form-headline mb-3">
     <h2>{{ loginMode ? 'Log In' : 'Sign Up' }} to Quiz with Friends!</h2>
+  </div>
+  <div class="guest-credentials">
+    <span class="guest-credentials-headline">Entry for guests:</span>
+    <span>E-Mail address: abc@abc.abc</span>
+    <p>Password: 12345678</p>
   </div>
   <div class="loading-container" *ngIf="loading">
     <p>Loading...</p>
